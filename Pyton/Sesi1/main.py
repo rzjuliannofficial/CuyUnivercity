@@ -26,16 +26,20 @@ pilihan_user = int(input("Menurut kamu di goa nomor berapa CUYPY berada? [1 / 2 
 
 print (f"pilihan kamu adalah {pilihan_user}")
 print()
-validasi_user = input("Apa kamu yakin dengan pilihanmu? [y/n]: ")
+konfirmasi_jawaban = input("Apa kamu yakin dengan pilihanmu?[y/n]: ")
 
-if validasi_user.lower() == 'y':
+if konfirmasi_jawaban.lower() == 'n':
+    print("oh ga yakin yah? keluar sistem...")
+    exit()
+elif konfirmasi_jawaban.lower() == 'y':
     print("Kamu yakin dengan pilihanmu!")
     if pilihan_user == cuypy_position:
         print(f"Selamat {nama_user}, kamu berhasil menemukan CUYPY di goa nomor {cuypy_position}!")
-    elif pilihan_user != cuypy_position:
+    else:
         print(f"Yahh {nama_user}... kamu salah nihh. CUYPY gada di goa nomor {pilihan_user}")
 else:
-    print("oh ga yakin yah? yaudah lah")
+    print("Pilihan tidak valid. Program akan keluar.")
+    exit()
     
     
 
