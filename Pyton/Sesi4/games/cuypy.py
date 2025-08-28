@@ -1,10 +1,10 @@
 import random
+import socket 
+import main
+
+nama_user = socket.gethostname()
+
 def start():
-    nama_user = input("Masukkan nama kamu: ")
-
-    while nama_user == "":
-        nama_user = input("Masukkan dulu nama kamu: ")
-
     while True:
         cuypy_position = random.randint(1, 4)
         bentuk_goa = "|_|"
@@ -29,10 +29,9 @@ def start():
             print(f"\nYahh {nama_user}... kamu salah nihh.")
             print(f"\n{goa}")
             
-        play_again = input("\nMau main lagi? [y/n]:")
+        play_again = input("\nMau main lagi? [y/n]: ")
         if play_again.lower() == 'n':
-            print("Terima kasih sudah bermain. Sampai jumpa lagi!")
-            break
+            main.menu()
 
 
 if __name__ == "__main__":
